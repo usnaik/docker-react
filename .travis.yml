@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t upendranaik/docker-react -f Dokerfile.dev .
+
+script:
+  - docker run upendranaik/docker-react npm run test -- --coverage
